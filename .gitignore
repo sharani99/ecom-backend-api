@@ -1,0 +1,53 @@
+# Dependencies
+/node_modules/
+
+# Build
+/dist/
+/build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Prisma generated files
+/src/generated/prisma/
+/generated/prisma/
+
+# Prisma local database
+prisma/*.db
+prisma/*.db-journal
+
+# Uploaded files
+/uploads/
+
+# AI tools
+/.agents/
+/.claude/
+/.windsurf/
+/.cursor/
+skills-lock.json
+
+# IDE
+/.vscode/
+/.idea/
+
+# Tests
+/coverage/
+/.nyc_output/
+
+# Logs
+/logs/
+*.log
+
+# Temporary files
+.temp/
+.tmp/
+*.pid
+*.pid.lock
+
+# Operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
