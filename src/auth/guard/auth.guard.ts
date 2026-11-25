@@ -35,7 +35,6 @@ export class AuthGuard implements CanActivate {
       req.user = payload;
 
       return true;
-      
     } catch {
       throw new UnauthorizedException('Geçersiz veya süresi dolmuş token');
     }

@@ -109,8 +109,6 @@ export class AuthController {
     return this.authService.removeAvatar(user.id);
   }
 
-
-
   @Get('avatar/:avatarId')
   showAvatar(@Param('avatarId') avatarId: string, @Res() res: Response) {
     return res.sendFile(basename(avatarId), { root: 'uploads/avatars' });

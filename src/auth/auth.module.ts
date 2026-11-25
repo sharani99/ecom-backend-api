@@ -6,6 +6,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { MailModule } from '../mail/mail.module';
+import { AuthGuard } from './guard/auth.guard';
+import { RolesGuard } from './guard/roles.guard';
 
 @Module({
   imports: [
@@ -20,7 +22,6 @@ import { MailModule } from '../mail/mail.module';
       }),
     }),
     MailModule,
-
     MulterModule.register({
       storage: diskStorage({
         destination: './uploads/avatars',
@@ -51,6 +52,7 @@ import { MailModule } from '../mail/mail.module';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuard,RolesGuard],
+  exports:[AuthGuard,RolesGuard,JwtModule]
 })
 export class AuthModule {}
